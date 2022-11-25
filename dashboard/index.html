@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta property="og:title" content="HITCON CTF 2022"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://ctf2022.hitcon.org"/>
+    <meta property="og:image" content="http://ctf.hitcon.org/img/og_img.png"/>
+    <meta property="og:site_name" content="HITCON CTF 2022"/>
+    <meta property="og:description" content="Online Jeopardy, Nov 25-27 2022"/>
+    <title>HITCON CTF 2022</title>
+
+    <link rel="shortcut icon" type="image/png" href="/static/img/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV7JMB5642"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CV7JMB5642');
+    </script>
+    
+  </head>
+  <body>
+    <nav id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">HITCON CTF 2022</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+            
+              <li></li>
+              <li></li>
+              
+            
+            <li>
+              <p id="timer" class="navbar-text"></p>
+              <input type="hidden" id="contest_start_time" value="1669384800.0">
+              <input type="hidden" id="contest_end_time" value="1669557600.0">
+              <input type="hidden" id="current_time" value="1665503089.0">
+            </li>
+          </ul>
+        </div>
+      </nav><div id="content" class="container">
+
+
+<div class="col-md-9">
+  <h4>Announcements</h4>
+  <div id="dashboard-announcements">
+    <ul></ul>
+  </div>
+
+  <div class="btn-group pull-right" id="challenge-mode-toggle"> 
+    <button class="btn btn-xs btn-primary active" id="btn-all">All</button>
+    <button class="btn btn-xs btn-default" id="btn-unsolved">Unsolved</button>
+  </div>
+  <h4>Challenges</h4>
+  <div id="dashboard-challenges">
+  </div>
+
+</div><!-- .col-md-9 -->
+
+<div class="col-md-3">
+  <h4>Rank</h4>
+  <ul id="mini-scoreboard" class="list-unstyled">
+  </ul>
+</div><!-- .col-md-3 -->
+
+
+<!-- model for challenge details -->
+<div class="modal fade" id="challenge-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-title" id="exampleModalLabel"></div>
+      </div>
+      <div class="modal-header">
+        <div id="challenge-description"></div>
+        <div id="challenge-author"></div>
+        <div id="challenge-solved_times"></div>
+      </div>
+
+      <div class="modal-header modal-hint" hidden>
+        <span id="challenge-hint"></span>
+      </div>
+
+      <div id="challenge-solved-team" class="modal-body"></div>
+
+
+      <div class="modal-footer">
+        <div>Submit the flag in <a href="https://scoreboard.hitconctf.com/">Scoreboard</a></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+<hr>
+<footer id="footer">
+  <h4 class="text-muted">&copy; HITCON CTF Team 2022</h4>
+<p class="text-muted">Contact: ctf2022@hitcon.org</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/markdown-it.min.js"></script>
+<script src="/static/js/moment.min.js"></script>
+<script src="/static/js/main.js"></script>
+<script>
+  var refresh_interval = 30 * 1000;
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  
+  var team_id = 0;
+  
+  
+  var current_time = Math.floor(Date.now() / 1000);
+  var contest_end_time = 1669557600.0;
+  var contest_end = current_time >= contest_end_time;
+</script>
+<script src="/static/js/dashboard.js"></script>
+
+</body>
+</html>

@@ -258,6 +258,25 @@ h4,
   background-color: #555 !important;
 }
 
+#scoreboard .firstblood {
+  background-color: #ccc;
+  /*
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-name: breathe;
+	-webkit-animation-duration: 1500ms;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+  */
+}
+@-webkit-keyframes breathe {
+  0% {
+    background-color: #555;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
 #scoreboard .team-url, 
 #scoreboard .team-url:hover, 
 #scoreboard .team-url:active, 
