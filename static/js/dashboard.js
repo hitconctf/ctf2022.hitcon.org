@@ -19,7 +19,7 @@ var md = window.markdownit({
 var challenges = null;
 
 var update_mini_scoreboard = function(){
-    $.getJSON("/dashboard/mini_scoreboard_data", function(data) {
+    $.getJSON(`/dashboard/mini_scoreboard_data?${Date.now()}`, function(data) {
         var entries = "";
         var is_top_teams = false;
         var top_teams = data.slice(0, 20);
@@ -54,7 +54,7 @@ update_mini_scoreboard();
 setInterval(update_mini_scoreboard, refresh_interval);
 
 var update_dashboard_challenges = function(){
-    $.getJSON("/dashboard/challenge_data", function(data) {
+    $.getJSON(`/dashboard/challenge_data?${Date.now()}`, function(data) {
         challenges = data;
         var entries = '<ul id="challenge-list">';
         for (var i in data) {

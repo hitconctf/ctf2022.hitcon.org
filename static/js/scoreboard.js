@@ -1,5 +1,5 @@
 var update_scoreboard = function(){
-    $.getJSON("/dashboard/scoreboard_data", function(data) {
+    $.getJSON(`/dashboard/scoreboard_data?${Date.now()}`, function(data) {
         var entries = "";
         var teamstat = data.teamstat;
         var challenges = data.challenges;
